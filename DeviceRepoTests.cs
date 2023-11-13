@@ -39,7 +39,13 @@ public class DeviceRepoTests
 
         var initialDevices = new List<Device>
         {
-            new Device  { DeviceId = "2", DeviceModel = "Model2", Room = "Room2", Organization = "Org2", DateAdded = "20231112"}
+            new Device  { 
+                DeviceId = "2", 
+                DeviceModel = "Model2", 
+                Room = "Room2", 
+                Organization = "Org2", 
+                DateAdded = "20231112"
+            }
         };
         
         repo.CreateDevices(initialDevices);
@@ -49,12 +55,4 @@ public class DeviceRepoTests
         var remainingDevices = repo.FetchDevices();
         Assert.DoesNotContain(remainingDevices, d => d.DeviceId == "2");
     }
-
-    [Fact]
-    public void CallGetDevice()
-    {
-
-    }
-
-
 }
